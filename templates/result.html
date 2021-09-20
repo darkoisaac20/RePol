@@ -1,0 +1,62 @@
+{% extends 'layouts.html' %}
+
+{% block content %} 
+<div class="col-md-2">
+    
+</div>
+<div class="col-md-8">
+    {% if comment =='' %}
+<div class="alert alert-danger mt-5" role="alert" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+    Please make sure to enter a text!
+</div>
+{% endif %}
+
+
+
+
+<div class="card mt-5" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+    <h5 class="card-header">RePol</h5>
+    <div class="card-body">
+      <h5 class="card-title">Enter Review</h5>
+      <form action="{{ url_for('result')}}" method="POST" >
+        <div class="form-group mb-4" >
+            <textarea name="comment" cols="50" class="form-control" id="exampleFormControlTextarea1" rows="12">{{ comment }}</textarea>
+        </div>
+    <div>
+        <input type="submit" class="btn-info btn btn-sm" value="Predict Category">
+        <a  class="btn-danger btn btn-sm " style='float: right;' href='/result'>Refresh <i class="bi bi-arrow-counterclockwise"></i></a>
+    </div>
+    </form>
+    </div>
+  </div>
+
+<!--  No prediction when text is empty -->
+{% if comment != '' %}
+<!-- condition for prediction -->
+{% if prediction == 'negative' %}
+<div class="alert alert-danger mt-5" role="alert" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+    <h2 style="color:#fff; text-align: center;" >Negative ☹</h2>
+</div>
+{% elif prediction == 'positive' %}
+<div class="alert alert-success mt-5" role="alert" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+    <h2 style="color:#fff; text-align:center;">Positive 🙂</h2>
+</div>
+{% endif %}
+{% endif %}
+</div>
+<div class="col-md-2">
+    
+</div>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
