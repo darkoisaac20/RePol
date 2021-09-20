@@ -7,9 +7,9 @@ from sklearn.linear_model import LogisticRegression
 from nltk.corpus import stopwords
 import pandas as pd
 import string
+import os
 #import pickle
 #import joblib
-
 
 app = Flask(__name__)
 
@@ -73,6 +73,6 @@ def predict():
     return render_template('result.html', title='Result', prediction = my_prediction, comment=comment)
 
 
-
+port = int(os.environ.get("PORT", 5000))
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=port,debug=True)
