@@ -4,7 +4,6 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
-from nltk.downloader import download, download_shell 
 from nltk.corpus import stopwords
 import pandas as pd
 import string
