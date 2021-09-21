@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 from nltk.corpus import stopwords
+from nltk.downloader import download, download_shell 
 import pandas as pd
 import string
 import os
