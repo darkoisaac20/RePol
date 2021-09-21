@@ -8,7 +8,6 @@ from nltk.corpus import stopwords
 import pandas as pd
 import string
 import os
-nltk.download()
 #import pickle
 #import joblib
 
